@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { observable,action } from "mobx";
 import {observer, inject} from 'mobx-react';
-@inject("store")
+@inject(allStores => ({
+    addIceCream: allStores.store.addIceCream 
+  }))
 @observer
 class IcecreamForm extends Component {
     @observable iceCream = {flavor: "",
@@ -11,7 +13,7 @@ class IcecreamForm extends Component {
     }
     submitForm = (e) => {
         e.preventDefault();
-    this.props.store.addIceCream(this.iceCream["flavor"],this.iceCream["color"]);
+    this.props.addIceCream(this.iceCream["flavor"],this.iceCream["color"]);
        this.iceCream.flavor="";
        this.iceCream.color="";
     }
