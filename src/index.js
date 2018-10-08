@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import store from './js/store/IcecreamStore';
-// import store from './js/store/IceCreamForm';
+import store from './js/store/IcecreamStore';
+import { Provider } from 'mobx-react';
 
-// console.log(store)
-// window.store = store;
-ReactDOM.render(<App />, document.getElementById('root'));
+
+window.store = store;
+window.store.addIceCream("Vanilla", "white");
+ReactDOM.render(<Provider store={store}>
+                    <App />
+                </Provider>, document.getElementById('root'));
+
+// ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<App store={store} />, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

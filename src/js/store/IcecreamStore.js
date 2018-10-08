@@ -1,9 +1,9 @@
-import { observable } from "mobx";
+import { observable,action } from "mobx";
 
 class IceCreamStore {
 	@observable iceCreams = [];
  
-        addIceCream(flavor ,color) {
+	@action addIceCream =(flavor ,color)=> {
 		this.iceCreams.push({ flavor, color });
 	}
 }
