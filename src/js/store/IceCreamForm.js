@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
+import { action } from "mobx";
+import {observer} from 'mobx-react';
+import { observable } from "mobx";
+@observer
 class IcecreamForm extends Component {
-    constructor(){
-      super();
-      this.iceCream = {flavor: "",
+    
+    @observable iceCream = {flavor: "",
                     color: ""};
-    }
-    inputChange = (e) => {
-        this.setState({[e.target.name] : e.target.value});
+    iceCreams = [];
+
+    @action inputChange = (e) => {
+        this.iceCream[e.target.name] = e.target.value;
     }
     submitForm = (e) => {
+        this.addIceCream(this.iceCream["flavor"],this.iceCream["color"]);
         console.log(this.state);
     }
+    addIceCream(flavor,color) {
+        console.log(this.iceCreams);
+        console.log("flavor",flavor,"color",color)
+		this.iceCreams.push({flavor, color });
+    }
     render() {
+        console.log(this.iceCreams);
       return (
         <div className="container">
           <input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor}/>
@@ -20,5 +31,5 @@ class IcecreamForm extends Component {
       } 
   }
   export default IcecreamForm;
-//   const store = new IceCreamForm();
+//   const store = new IcecreamForm();
 // export default store;
