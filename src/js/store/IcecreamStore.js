@@ -1,11 +1,11 @@
+import { observable } from "mobx";
+
 class IceCreamStore {
-    iceCreams = [];
+	@observable iceCreams = [];
  
-    addIceCream(flavor, color) {
-    this.iceCreams.push({ flavor, color });
-    // this.setState({store: this.store.iceCreams});
-    }
-    
+        addIceCream(flavor ,color) {
+		this.iceCreams.push({ flavor, color });
+	}
 }
 
 const store = new IceCreamStore();
