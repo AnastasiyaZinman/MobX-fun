@@ -7,6 +7,9 @@ class IceCreamStore {
 	@computed get iceCreamsCount() {
 		return this.iceCreams.length;
 	}
+	@computed get iceCreamsFilteredCount() {
+		return this.filterIceCreams.length;
+	}
 	@action addIceCream = (flavor, color) => {
 		this.iceCreams.push({ flavor, color });
 	}

@@ -13,7 +13,8 @@ import { observable, action, computed } from '../node_modules/mobx';
     console.log(this.filterString);
     return (
       <div className="App">
-        <input type="text" placeholder="Type filter text" onChange={this.filterChange} />
+        <input type="text" placeholder="Type filter text" onChange={this.filterChange} /><br/>
+        Filter: {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}</li>)}
         </ul>
