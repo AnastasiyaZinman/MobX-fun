@@ -10,7 +10,7 @@ class IcecreamForm extends Component {
     @observable iceCream = {
         flavor: "",
         color: "",
-        id:1,
+        id: 1,
         img:""
     };
     @action inputChange = (e) => {

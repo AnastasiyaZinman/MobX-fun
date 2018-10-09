@@ -4,6 +4,8 @@ class IceCreamStore {
 	@observable iceCreams = [
 		{flavor:'Chocolate',color:'black', id: 0, img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
 	@observable filterString = "";
+	@observable showComponent: false;
+	@observable currentId:0;
 
 	@computed get iceCreamsCount() {
 		return this.iceCreams.length;
