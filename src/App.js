@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import IcecreamForm from './js/store/IcecreamForm'
 import { observable, action, computed } from '../node_modules/mobx';
@@ -13,13 +14,16 @@ import { observable, action, computed } from '../node_modules/mobx';
     console.log(this.filterString);
     return (
       <div className="App">
-      Add Ice Cream:<IcecreamForm />
-        <input type="text" placeholder="Type filter text" onChange={this.filterChange} /><br/>
+     
+       <div className="row text-left ml-4">Add Ice Cream:
+      <IcecreamForm />
+        <input type="text" placeholder="Type filter text" onChange={this.filterChange} /><br/> 
+        </div>
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}</li>)}
         </ul>
-        
+       
       </div>
     );
   }

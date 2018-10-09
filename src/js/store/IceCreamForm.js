@@ -25,10 +25,12 @@ class IcecreamForm extends Component {
         console.log(this.iceCreams);
         return (
             <div className="container">
-            {/* -={this.props.filterTerm}=- */}
+            <div className="col-md-2  ">
                 Flavor:<input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} /><br />
                 Color: <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} />
-                <input type="button" onClick={this.submitForm} value="submit" /> </div>);
+                <input type="button" onClick={this.submitForm} value="Add IceCream" /> 
+                </div>
+                </div>);
     }
 }
 export default IcecreamForm;
