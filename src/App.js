@@ -22,8 +22,9 @@ import { observable, action, computed } from '../node_modules/mobx';
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}
+          <img src={iceCream.img} alt={iceCream.favor}/>
           <br/>
-          <button type="button" className="btn btn-primary">Comment</button>
+          <button type="button" className="btn btn-primary">Edit</button>
           <button type="button" className="btn btn-danger">Delete</button></li>)}
         </ul>
        

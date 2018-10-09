@@ -5,6 +5,12 @@
   line-height: 0.5;
   font-size: 12px;
 }
+input[type=text]:focus {
+  border: 1px solid rgb(40, 131, 192);
+}
+img{
+  width:30px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;

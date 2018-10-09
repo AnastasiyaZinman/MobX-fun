@@ -9,16 +9,18 @@ import { observer, inject } from 'mobx-react';
 class IcecreamForm extends Component {
     @observable iceCream = {
         flavor: "",
-        color: ""
+        color: "",
+        img:""
     };
     @action inputChange = (e) => {
         this.iceCream[e.target.name] = e.target.value;
     }
     submitForm = (e) => {
         e.preventDefault();
-        this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"]);
+        this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"], this.iceCream["img"]);
         this.iceCream.flavor = "";
         this.iceCream.color = "";
+        this.iceCream.img ="";
     }
 
     render() {
@@ -27,7 +29,8 @@ class IcecreamForm extends Component {
             <div className="container">
             <div className="col-md-2  ">
                 Flavor:<input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} /><br />
-                Color: <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} />
+                Color: <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} /><br />
+                Link to Image: <input type="text" name="img" onChange={this.inputChange} value={this.iceCream.img} />                
                 <input type="button" onClick={this.submitForm} value="Add IceCream" /> 
                 </div>
                 </div>);
