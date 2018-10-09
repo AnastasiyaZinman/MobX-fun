@@ -26,8 +26,8 @@ class IcecreamForm extends Component {
         return (
             <div className="container">
             {/* -={this.props.filterTerm}=- */}
-                <input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} /><br />
-                <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} />
+                Flavor:<input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} /><br />
+                Color: <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} />
                 <input type="button" onClick={this.submitForm} value="submit" /> </div>);
     }
 }
