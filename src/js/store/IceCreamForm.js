@@ -22,7 +22,7 @@ class IcecreamForm extends Component {
         this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"],this.iceCream["id"], this.iceCream["img"]);
         this.iceCream.flavor = "";
         this.iceCream.color = "";
-        this.iceCream.id = this.iceCream.id+1;
+        this.iceCream.id = this.iceCream.id + 1;
         this.iceCream.img ="";
     }
 

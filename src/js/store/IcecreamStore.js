@@ -27,18 +27,20 @@ class IceCreamStore {
 		this.iceCreams.replace(filteredIceCreams);
 	}
 	findIceCreamIndexById = (id) => {
-		console.log("id", id);
-		this.iceCreams.forEach((iceCream, i) => {
-			console.log("currentId", iceCream.id);
+		console.log("this.iceCreams",this.iceCreams);
+		let index;
+		return index= this.iceCreams.forEach((iceCream, i) => {
+			console.log("iceCream", iceCream);
 			if (iceCream.id === id)
-				return i
+			{alert("find!", iceCream.id);
+				return iceCream}
 		})
 	}
 	@action updateIceCreamInfo = (flavor, color, img) => {
 		let index = this.findIceCreamIndexById(this.currentId);
-		console.log("currentId"+this.currentId)
-		console.log(flavor, color, img)
-		console.log("indexAAAA", index);
+		// console.log("currentId" + this.currentId)
+		// console.log(flavor, color, img)
+		// console.log("indexAAAA", index);
 		// this.iceCreams[index].flavor=flavor;
 		// this.iceCreams[index].color=color;
 		// this.iceCreams[index].img=img;

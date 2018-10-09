@@ -7,9 +7,9 @@ import './clientInfo.css';
 class UpdateIceCreamInfo extends Component {
     @observable 
     newIceCreamInfo={
-        flavor:"",
-        color:"",
-        img:""
+        flavor: this.props.store.iceCreams[this.props.store.currentId].flavor,
+        color: this.props.store.iceCreams[this.props.store.currentId].color,
+        img:this.props.store.iceCreams[this.props.store.currentId].imgPath
     }
     @action inputChange = (e) => {
         this.newIceCreamInfo[e.target.name] = e.target.value;
