@@ -12,7 +12,7 @@ class IcecreamView extends Component {
     render(){
     return(
         <li key={this.props.iceCream.id} id={this.props.iceCream.id}>{this.props.iceCream.flavor}
-          <span style={{ backgroundColor: this.props.iceCream.color }}><img src={this.props.iceCream.img} alt={this.props.iceCream.favor}/></span>
+          <span style={{ backgroundColor: this.props.iceCream.color }}><img src={this.props.iceCream.imgPath} alt={this.props.iceCream.favor}/></span>
           <br/>
           <button id={this.props.iceCream.id} type="button" className="btn btn-primary" onClick={() => {this.updateIceCreamInfo()}}>Edit</button>
           <button id={this.props.iceCream.id} type="button" className="btn btn-danger" onClick={() => { this.props.store.deleteItem(this.props.iceCream.id)} }>Delete</button>

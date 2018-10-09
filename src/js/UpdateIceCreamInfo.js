@@ -15,8 +15,18 @@ class UpdateIceCreamInfo extends Component {
         this.newIceCreamInfo[e.target.name] = e.target.value;
     }
 
+    updateData = ()=>{
+console.log('Clicked')
+        this.props.store.updateIceCreamInfo(
+            this.newIceCreamInfo.flavor,
+            this.newIceCreamInfo.color,
+            this.newIceCreamInfo.img
+        )
+        
+    }
+
 render()
-{
+{console.log("current ID", this.props.store.currentId)
 return(
 <div className="modal-body">
         <button type="button" className="close" onClick={this.props.store.closeUpdateModal}>
@@ -40,7 +50,7 @@ return(
                         <input type="text" name="img" onChange={this.inputChange} value={this.newIceCreamInfo.img} />
                     </div>
             </div>
-                <button type="button" className="btn btn-info btn-update" >Update</button>
+                <button type="button" className="btn btn-info btn-update" onClick={this.updateData}>Update</button>
                  {/* <input type="button" className="btn btn-info" value="Input Button" /> */}
         </div>
     </div>
