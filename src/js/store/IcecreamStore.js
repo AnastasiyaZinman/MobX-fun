@@ -1,8 +1,10 @@
-import { observable,action } from "mobx";
+import { observable,action, computed } from "mobx";
 
 class IceCreamStore {
 	@observable iceCreams = [];
- 
+	@computed get iceCreamsCount(){
+		return this.iceCreams.length;
+	}
 	@action addIceCream =(flavor ,color)=> {
 		this.iceCreams.push({ flavor, color });
 	}
