@@ -34,14 +34,17 @@ class IceCreamStore {
 		 })
 		return index
 	}
-	@action updateIceCreamInfo = (flavor, color, img) => {
+	@action updateIceCreamInfo = (newData) => {
 		let index = this.findIceCreamIndexById(this.currentId);
-		// console.log("currentId" + this.currentId)
-		// console.log(flavor, color, img)
-		console.log("indexAAAA", index);
-		this.iceCreams[index].flavor=flavor;
-		this.iceCreams[index].color=color;
-		this.iceCreams[index].img=img;
+		console.log("newdata",newData);
+		this.changeIceCreamProperties(index,newData);
+		console.log("UPDATED",this.iceCreams[index])
+	}
+	@action changeIceCreamProperties = (index,newData) => {
+		for (let key in newData) {
+		// console.log(key,"  ",this.iceCreams[index][key])
+		this.iceCreams[index][key] = newData[key]; //[] for variable, . just for key-text
+		}
 	}
 
 
