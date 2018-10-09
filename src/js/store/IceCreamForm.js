@@ -10,6 +10,7 @@ class IcecreamForm extends Component {
     @observable iceCream = {
         flavor: "",
         color: "",
+        id:0,
         img:""
     };
     @action inputChange = (e) => {
@@ -18,9 +19,10 @@ class IcecreamForm extends Component {
     submitForm = (e) => {
         e.preventDefault();
         console.log("this ImagePath",this.iceCream.img);
-        this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"], this.iceCream["img"]);
+        this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"],this.iceCream["id"], this.iceCream["img"]);
         this.iceCream.flavor = "";
         this.iceCream.color = "";
+        this.iceCream.id = this.iceCream.id+1;
         this.iceCream.img ="";
     }
 

@@ -21,11 +21,12 @@ import { observable, action, computed } from '../node_modules/mobx';
         </div>
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
-          {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}
-          <span style={{ backgroundColor: iceCream.color }}><img src={iceCream.img} alt={iceCream.img}/></span>
+          {this.props.store.filterIceCreams.map((iceCream, i) => 
+          <li key={i} id={iceCream.id}>{iceCream.flavor}
+          <span style={{ backgroundColor: iceCream.color }}><img src={iceCream.img} alt={iceCream.favor}/></span>
           <br/>
-          <button type="button" className="btn btn-primary">Edit</button>
-          <button type="button" className="btn btn-danger">Delete</button></li>)}
+          <button id={iceCream.id} type="button" className="btn btn-primary">Edit</button>
+          <button id={iceCream.id} type="button" className="btn btn-danger" onClick={() => { this.props.store.deleteItem(iceCream.id)} }>Delete</button></li>)}
         </ul>
        
       </div>

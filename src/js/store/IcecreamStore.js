@@ -2,7 +2,7 @@ import { observable, action, computed } from "mobx";
 
 class IceCreamStore {
 	@observable iceCreams = [
-		{flavor:'Chocolate',color:'black', img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
+		{flavor:'Chocolate',color:'black', id: 0, img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
 	@observable filterString = "";
 
 	@computed get iceCreamsCount() {
@@ -11,11 +11,15 @@ class IceCreamStore {
 	@computed get iceCreamsFilteredCount() {
 		return this.filterIceCreams.length;
 	}
-	@action addIceCream = (flavor, color,imgPath) => {
+	@action addIceCream = (flavor, color, id,imgPath) => {
 		console.log("imgPath",imgPath)
 		if(flavor && color && imgPath)
-		this.iceCreams.push({ flavor, color, imgPath })
+		this.iceCreams.push({ flavor, color,id, imgPath })
 		else alert("Type flavor and color!");
+	}
+	@action deleteItem =(id) =>{
+		let filteredIceCreams = this.iceCreams.filter(iceCream => iceCream.id !== id);
+		this.iceCreams.replace(filteredIceCreams);
 	}
 
 
