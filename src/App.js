@@ -18,15 +18,19 @@ import IcecreamView from './js/IcecreamView';
     return (
       <div className="App">
      <h2>Add Ice Cream:</h2>
-       <div className="row text-left ml-4">
+       <div className="text-left ml-4">
       <IcecreamForm />
-        <span className="ml-2">Search: <input type="text" placeholder="Type filter text" onChange={this.filterChange} /></span><br/> 
+      <hr/>
+        <div className="search">
+        Search: <br/>
+        <input className="search-text" type="text" placeholder="Type filter text" onChange={this.filterChange} />
+        </div> 
        </div>
       {this.props.store.showComponent ?
        <UpdateIceCreamInfo id={this.props.store.currentId} /> : null }
        
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
-        <ul>
+        <ul className="ml-5">
           {this.props.store.filterIceCreams.map((iceCream, i) => 
          <IcecreamView 
          key={iceCream.id}
