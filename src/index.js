@@ -9,6 +9,7 @@ import { Provider } from 'mobx-react';
 
 window.store = store;
 window.store.addIceCream("Vanilla", "white");
+window.store.addIceCream("pistachio", "white");
 ReactDOM.render(<Provider store={store}>
                     <App />
                 </Provider>, document.getElementById('root'));
