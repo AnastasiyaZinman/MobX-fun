@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.btn{
+  line-height: 0.5;
+  font-size: 12px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;

@@ -21,7 +21,10 @@ import { observable, action, computed } from '../node_modules/mobx';
         </div>
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
-          {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}</li>)}
+          {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}
+          <br/>
+          <button type="button" className="btn btn-primary">Comment</button>
+          <button type="button" className="btn btn-danger">Delete</button></li>)}
         </ul>
        
       </div>
