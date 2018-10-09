@@ -5,13 +5,16 @@ class IceCreamStore {
 		{flavor:'Chocolate',color:'black', id: 0, img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
 	@observable filterString = "";
 	@observable showComponent: false;
-	@observable currentId:0;
+	@observable currentId: 0;
 
 	@computed get iceCreamsCount() {
 		return this.iceCreams.length;
 	}
 	@computed get iceCreamsFilteredCount() {
 		return this.filterIceCreams.length;
+	}
+	@action closeUpdateModal =()=>{
+	this.showComponent = false;
 	}
 	@action addIceCream = (flavor, color, id,imgPath) => {
 		console.log("imgPath",imgPath)

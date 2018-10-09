@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-// import { observer, inject } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import './clientInfo.css';
+@inject("store")
+
 class UpdateIceCreamInfo extends Component {
 
 render()
 {
-console.log("hererer");
 return(
 <div className="modal-body">
-        <button type="button" className="close" onClick={this.closeBox}>
+        <button type="button" className="close" onClick={this.props.store.closeUpdateModal}>
             <span aria-hidden="true">&times;</span>
         </button>
         <h5>Change Details</h5>
