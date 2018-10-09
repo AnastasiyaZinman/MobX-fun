@@ -14,15 +14,15 @@ import { observable, action, computed } from '../node_modules/mobx';
     console.log(this.filterString);
     return (
       <div className="App">
-     
-       <div className="row text-left ml-4">Add Ice Cream:
+     <h2>Add Ice Cream:</h2>
+       <div className="row text-left ml-4">
       <IcecreamForm />
-        <input type="text" placeholder="Type filter text" onChange={this.filterChange} /><br/> 
+        <span className="ml-2">Search: <input type="text" placeholder="Type filter text" onChange={this.filterChange} /></span><br/> 
         </div>
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => <li key={i}>{iceCream.flavor}
-          <img src={iceCream.img} alt={iceCream.favor}/>
+          <span style={{ backgroundColor: iceCream.color }}><img src={iceCream.img} alt={iceCream.img}/></span>
           <br/>
           <button type="button" className="btn btn-primary">Edit</button>
           <button type="button" className="btn btn-danger">Delete</button></li>)}

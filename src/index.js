@@ -8,8 +8,8 @@ import { Provider } from 'mobx-react';
 
 
 window.store = store;
-window.store.addIceCream("Vanilla", "white","http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png");
-window.store.addIceCream("pistachio", "lightgreen","http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png");
+// window.store.addIceCream("Vanilla", "white","http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png");
+// window.store.addIceCream("pistachio", "lightgreen","http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png");
 ReactDOM.render(<Provider store={store}>
                     <App />
                 </Provider>, document.getElementById('root'));

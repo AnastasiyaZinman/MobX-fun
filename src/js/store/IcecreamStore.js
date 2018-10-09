@@ -1,7 +1,8 @@
 import { observable, action, computed } from "mobx";
 
 class IceCreamStore {
-	@observable iceCreams = [{flavor:'Chocolate',color:'black', img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
+	@observable iceCreams = [
+		{flavor:'Chocolate',color:'black', img:"http://icons.iconarchive.com/icons/icons-land/3d-food/256/IceCream-Cone-icon.png"}]; 
 	@observable filterString = "";
 
 	@computed get iceCreamsCount() {
@@ -11,6 +12,7 @@ class IceCreamStore {
 		return this.filterIceCreams.length;
 	}
 	@action addIceCream = (flavor, color,imgPath) => {
+		console.log("imgPath",imgPath)
 		if(flavor && color && imgPath)
 		this.iceCreams.push({ flavor, color, imgPath })
 		else alert("Type flavor and color!");

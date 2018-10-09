@@ -17,6 +17,7 @@ class IcecreamForm extends Component {
     }
     submitForm = (e) => {
         e.preventDefault();
+        console.log("this ImagePath",this.iceCream.img);
         this.props.addIceCream(this.iceCream["flavor"], this.iceCream["color"], this.iceCream["img"]);
         this.iceCream.flavor = "";
         this.iceCream.color = "";
@@ -30,7 +31,7 @@ class IcecreamForm extends Component {
             <div className="col-md-2  ">
                 Flavor:<input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} /><br />
                 Color: <input type="text" name="color" onChange={this.inputChange} value={this.iceCream.color} /><br />
-                Link to Image: <input type="text" name="img" onChange={this.inputChange} value={this.iceCream.img} />                
+                Image: <input type="text" name="img" onChange={this.inputChange} value={this.iceCream.img} />                
                 <input type="button" onClick={this.submitForm} value="Add IceCream" /> 
                 </div>
                 </div>);
