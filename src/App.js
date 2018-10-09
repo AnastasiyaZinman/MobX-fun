@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import IcecreamForm from './js/store/IcecreamForm'
 import { observable, action, computed } from '../node_modules/mobx';
+import IcecreamView from './js/IcecreamView';
 
 @inject("store")
 @observer class App extends Component {
@@ -22,11 +23,10 @@ import { observable, action, computed } from '../node_modules/mobx';
         {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
         <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => 
-          <li key={i} id={iceCream.id}>{iceCream.flavor}
-          <span style={{ backgroundColor: iceCream.color }}><img src={iceCream.img} alt={iceCream.favor}/></span>
-          <br/>
-          <button id={iceCream.id} type="button" className="btn btn-primary">Edit</button>
-          <button id={iceCream.id} type="button" className="btn btn-danger" onClick={() => { this.props.store.deleteItem(iceCream.id)} }>Delete</button></li>)}
+         <IcecreamView 
+         key={iceCream.id}
+         iceCream={iceCream}/>
+         )}
         </ul>
        
       </div>
