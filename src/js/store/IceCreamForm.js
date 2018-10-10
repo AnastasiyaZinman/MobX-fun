@@ -29,8 +29,8 @@ class IcecreamForm extends Component {
     render() {
         console.log(this.iceCreams);
         return (
-            <div className="container">
-            <div className="row">
+            <div className="container text-center">
+            {/* <div className="row"> */}
                 <div className="col-sm-4">
                 Flavor:<br/>
                 <input type="text" name="flavor" onChange={this.inputChange} value={this.iceCream.flavor} />
@@ -44,13 +44,11 @@ class IcecreamForm extends Component {
                 <div className="col-sm-4">
                 Image: <br/>
                 <input type="text" name="img" onChange={this.inputChange} value={this.iceCream.img} />                
+                <input className="text-center" type="button" onClick={this.submitForm} value="Add IceCream" />
                
                 </div>
-                <input className="text-center" type="button" onClick={this.submitForm} value="Add IceCream" />
-                </div> 
-                
-                
-    
+                {/* </div>  */}
+            
             </div>
            );
     }

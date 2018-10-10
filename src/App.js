@@ -17,26 +17,32 @@ import IcecreamView from './js/IcecreamView';
     console.log(this.filterString);
     return (
       <div className="App">
-     <h2>Add Ice Cream:</h2>
-       <div className="text-left ml-4">
-      <IcecreamForm />
-      <hr/>
-        <div className="search">
-        Search: <br/>
-        <input className="search-text" type="text" placeholder="Type filter text" onChange={this.filterChange} />
-        </div> 
-       </div>
-      {this.props.store.showComponent ?
-       <UpdateIceCreamInfo id={this.props.store.currentId} /> : null }
-       
-        {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
-        <ul className="ml-5">
+      <div className="row">
+      <div className="text-left ml-6">
+     <h4>Ice Creams Collection:</h4>
+     {(this.props.store.filterString!==''? "Filter":"")} {this.props.store.filterString}<br/> 
+        Result: {this.props.store.iceCreamsFilteredCount}/{this.props.store.iceCreamsCount}<br/>
+        <ul>
           {this.props.store.filterIceCreams.map((iceCream, i) => 
          <IcecreamView 
          key={iceCream.id}
          iceCream={iceCream}/>
          )}
         </ul>
+     </div>
+       <div className="text-left ml-4">
+      <IcecreamForm />
+    
+       </div> 
+       <div className="search ml-2">
+        Search: <br/>
+        <input className="search-text" type="text" placeholder="Type filter text" onChange={this.filterChange} />
+        </div> 
+        </div>
+      {this.props.store.showComponent ?
+       <UpdateIceCreamInfo id={this.props.store.currentId} /> : null }
+       
+        
        
       </div>
     );
